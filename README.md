@@ -1,9 +1,9 @@
 # BioinformaticsTasks
 
 ## Week 1: Introduction to Genome Sequencing
-[01](src/Bioinformatics II/1 week/gen_1.1.py) String Composition Problem
-[02](src/Bioinformatics II/1 week/gen_1.2.py) Genome Path Problem
-[03](src/Bioinformatics II/1 week/gen_1.3.py) Overlap Graph Problem
+[01](src/Bioinformatics%20II/1%20week/gen_1.1.py) String Composition Problem
+[02](src/Bioinformatics%20II/1%20week/gen_1.2.py) Genome Path Problem
+[03](src/Bioinformatics%20II/1%20week/gen_1.3.py) Overlap Graph Problem
 [04](src/Bioinformatics II/1 week/gen_1.4.py) 4-universal String
 [05](src/Bioinformatics II/1 week/gen_1.5.py) De Bruijn Graph from a String Problem
 [06](src/Bioinformatics II/1 week/gen_1.6.py) DeBruijn Graph from k-mers Problem
