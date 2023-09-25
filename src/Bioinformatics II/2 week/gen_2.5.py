@@ -1,3 +1,20 @@
+"""
+Code Challenge: Solve the String Reconstruction from Read-Pairs Problem.
+
+    Input: Integers k and d followed by a collection of paired k-mers PairedReads.
+    Output: A string Text with (k, d)-mer composition equal to PairedReads.
+
+To solve the String Reconstruction from Read-Pairs Problem,
+you will need to reconstruct a string from its path in the paired de Bruijn graph.
+
+Sample Input:
+4 2
+GAGA|TTGA TCGT|GATG CGTG|ATGT TGGT|TGAG GTGA|TGTT GTGG|GTGA TGAG|GTTG GGTC|GAGA GTCG|AGAT
+
+Sample Output:
+GTGGTCGTGAGATGTTGA
+"""
+
 def reconstruct_string(k, d, paired_reads):
     in_kmer = {i: [p.split('|')[0], p.split('|')[1]] for i, p in enumerate(paired_reads)}
     bkmer = [False] * len(in_kmer)

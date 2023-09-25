@@ -1,3 +1,7 @@
+"""
+Exercise Break: Construct a 4-universal string.
+"""
+
 def isUniversal(kString, k):
     kmers = set()
     for i in range(len(kString) - k + 1):

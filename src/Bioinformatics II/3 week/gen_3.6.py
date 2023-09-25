@@ -1,3 +1,32 @@
+"""
+Code Challenge: Implement CyclopeptideSequencing (pseudocode reproduced below).
+
+Note: After the failure of the first brute-force algorithm we considered,
+you may be hesitant to implement CyclopeptideSequencing for fear that its runtime will be prohibitive.
+The potential problem with CyclopeptideSequencing is that it may generate incorrect k-mers at intermediate stages
+(i.e., k-mers that are not subpeptides of a correct solution).
+In practice, however, this is not a concern. See Charging Station: How fast is CyclopeptideSequencing?
+
+CyclopeptideSequencing(Spectrum)
+    CandidatePeptides ← a set containing only the empty peptide FinalPeptides ← empty list of strings
+    while CandidatePeptides is nonempty
+        CandidatePeptides ← Expand(CandidatePeptides)
+        for each peptide Peptide in CandidatePeptides
+            if Mass(Peptide) = ParentMass(Spectrum)
+                if Cyclospectrum(Peptide) = Spectrum and Peptide is not in FinalPeptides
+                    append Peptide to FinalPeptides
+                remove Peptide from CandidatePeptides
+            else if Peptide is not consistent with Spectrum
+                remove Peptide from CandidatePeptides
+    return FinalPeptides
+
+Sample Input:
+0 113 128 186 241 299 314 427
+
+Sample Output:
+186-128-113 186-113-128 128-186-113 128-113-186 113-186-128 113-128-186
+"""
+
 import itertools
 
 def CYCLOPEPTIDESEQUENCING(in_spectrum, masss):

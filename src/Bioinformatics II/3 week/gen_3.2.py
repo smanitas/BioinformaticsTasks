@@ -1,3 +1,25 @@
+"""
+Peptide Encoding Problem: Find substrings of a genome encoding a given amino acid sequence.
+
+    Input: A DNA string Text, an amino acid string Peptide, and the array GeneticCode.
+    Output: All substrings of Text encoding Peptide (if any such substrings exist).
+
+Code Challenge: Solve the Peptide Encoding Problem.
+Click here for the RNA codon table corresponding to the array GeneticCode.
+
+Note: The solution may contain repeated strings if the same string occurs more
+than once as a substring of Text and encodes Peptide.
+
+Sample Input:
+ATGGCCATGGCCCCCAGAACTGAGATCAATAGTACCCGTATTAACGGGTGA
+MA
+
+Sample Output:
+ATGGCC
+GGCCAT
+ATGGCC
+"""
+
 def peptide_encoding_problem(dna, peptide):
     patterns = []
 

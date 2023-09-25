@@ -1,5 +1,18 @@
-import collections
+"""
+Code Challenge: Implement LeaderboardCyclopeptideSequencing.
 
+    Input: An integer N and a collection of integers Spectrum.
+    Output: LeaderPeptide after running LeaderboardCyclopeptideSequencing(Spectrum, N).
+
+Sample Input:
+10
+0 71 113 129 147 200 218 260 313 331 347 389 460
+
+Sample Output:
+113-147-71-129
+"""
+
+import collections
 
 class LeaderboardCyclopeptideSequencing:
     def __init__(self):
@@ -180,7 +193,6 @@ class LeaderboardCyclopeptideSequencing:
                 leaderboard.remove(p)
             leaderboard = self.Trim(leaderboard, spectrumDict, N)
         return leaderpeptide
-
 
 if __name__ == "__main__":
     LeaderboardCyclopeptideSequencing()

@@ -1,3 +1,32 @@
+"""
+You now have a method to assemble a genome, since the String Reconstruction Problem reduces to
+finding an Eulerian path in the de Bruijn graph generated from reads.
+
+We can therefore summarize this solution using the following pseudocode,
+which relies on three problems that we have already solved:
+    The de Bruijn Graph Construction Problem;
+    The Eulerian Path Problem;
+    The String Spelled by a Genome Path Problem.
+
+StringReconstruction(Patterns)
+    dB ← DeBruijn(Patterns)
+    path ← EulerianPath(dB)
+    Text﻿ ← PathToGenome(path)
+    return Text
+
+Code Challenge: Solve the String Reconstruction Problem.
+
+    Input: An integer k followed by a list of k-mers Patterns.
+    Output: A string Text with k-mer composition equal to Patterns. (If multiple answers exist, you may return any one.)
+
+Sample Input:
+4
+CTTA ACCA TACC GGCT GCTT TTAC
+
+Sample Output:
+GGCTTACCA
+"""
+
 import networkx as nx
 
 def reconstruct_string(k, patterns):

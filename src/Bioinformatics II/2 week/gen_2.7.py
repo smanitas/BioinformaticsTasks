@@ -1,3 +1,19 @@
+"""
+Code Challenge: Implement StringSpelledByGappedPatterns.
+
+    Input: Integers k and d followed by a sequence of (k, d)-mers (a1|b1), … , (an|bn) such
+    that Suffix(ai|bi) = Prefix(ai+1|bi+1) for 1 ≤ i ≤ n-1.
+    Output: A string Text of length k + d + k + n - 1 such
+    that the i-th (k, d)-mer in Text is equal to (ai|bi)  for 1 ≤ i ≤ n (if such a string exists).
+
+Sample Input:
+4 2
+GACC|GCGC ACCG|CGCC CCGA|GCCG CGAG|CCGG GAGC|CGGA
+
+Sample Output:
+GACCGAGCGCCGGA
+"""
+
 import collections
 
 def reconstruct_string(k, d, paired_reads):

@@ -1,3 +1,13 @@
+"""
+Code Challenge: Solve the String Spelled by a Genome Path Problem.
+
+Sample Input:
+ACCGA CCGAA CGAAG GAAGC AAGCT
+
+Sample Output:
+ACCGAAGCT
+"""
+
 def reconstruct_string_from_path(patterns):
     reconstructed_string = patterns[0]
     k = len(patterns[0])

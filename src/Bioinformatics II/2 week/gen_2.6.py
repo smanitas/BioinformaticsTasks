@@ -1,17 +1,25 @@
+"""
+Contig Generation Problem: Generate the contigs from a collection of reads (with imperfect coverage).
+
+    Input: A collection of k-mers Patterns.
+    Output: All contigs in DeBruijn(Patterns).
+
+Code Challenge: Solve the Contig Generation Problem.
+
+Sample Input:
+ATG ATG TGT TGG CAT GGA GAT AGA
+
+Sample Output:
+AGA ATG ATG CAT GAT TGGA TGT
+"""
+
 import sys
 
-
 def contig_generation_problem(kmers):
-    """
-    Contig Generation Problem: Generate the contigs from a collection of reads (with imperfect coverage).
-     Input: A collection of k-mers Patterns.
-     Output: All contigs in DeBruijn(Patterns).
-    """
     de_bruijn = de_bruijn_graph_from_kmers(kmers)
     paths = maximal_non_branching_paths(de_bruijn)
     contigs = convert_paths_to_contigs(paths)
     return contigs
-
 
 def convert_paths_to_contigs(paths):
     contigs = []
@@ -26,7 +34,6 @@ def convert_paths_to_contigs(paths):
         contigs.append(text)
     contigs.sort()
     return contigs
-
 
 def de_bruijn_graph_from_kmers(kmers):
     adjacency_list = {}
@@ -43,18 +50,7 @@ def de_bruijn_graph_from_kmers(kmers):
                 adjacency_list[pre] = pre + " -> " + suf
     return adjacency_list.values()
 
-
 def maximal_non_branching_paths(adjacency_list):
-    """
-    Input: The adjacency list of a adjacency_list whose nodes are integers.
-    Output: The collection of all maximal nonbranching paths in this adjacency_list.    
-    """
-    """
-    This code takes an adjacency list, formats to graph/dict, determines which nodes are 1-in-1-out.
-    From that, creates paths that do not branch (non-maximal-branching-paths) aka paths consisting
-    of single edges. 
-    """
-
     # reformats data to remove -> and save to graph
     graph = {}
     for line in adjacency_list:
@@ -92,14 +88,12 @@ def maximal_non_branching_paths(adjacency_list):
                     paths.append(temp_cycle)
     return paths
 
-
 def one_in_one_out(vertex, degree):
     deg_in = degree[0].get(vertex, 0)
     deg_out = degree[1].get(vertex, 0)
     # print("deg_in " + str(deg_in))
     # print("deg_out " + str(deg_out))
     return (deg_in == 1) and (deg_out == 1)
-
 
 def visited(vertex, paths):
     # checks for vertex in paths
@@ -110,7 +104,6 @@ def visited(vertex, paths):
         if vertex in path:
             return True
     return False
-
 
 def isolated_cycle(vertex, degree, graph):
     cycle = [vertex]
@@ -124,11 +117,8 @@ def isolated_cycle(vertex, degree, graph):
             return cycle_path[:-4]  # removes last ->
     return None
 
-
 def in_and_out_degree(graph):
-    '''
-    return the in and out degree lists for a given adjacency_list's adjacency list
-    '''
+    #return the in and out degree lists for a given adjacency_list's adjacency list
     ind = {}
     outd = {}
     for key, value in graph.items():
@@ -136,20 +126,6 @@ def in_and_out_degree(graph):
         for kk in value:
             ind[kk] = ind.get(kk, 0) + 1
     return (ind, outd)
-
-
-"""
-kmers = [
-    "ATG",
-    "ATG",
-    "TGT",
-    "TGG",
-    "CAT",
-    "GGA",
-    "GAT",
-    "AGA"
-]
-"""
 
 with open('dataset_205_5.txt', 'r') as file:
     kmers = file.readline().split()
@@ -159,8 +135,3 @@ print(' '.join(contig_generation_problem(kmers)))
 
 with open('output.txt', 'w') as file:
     file.write(' '.join(contig_generation_problem(kmers)))
-
-"""
-Sample output:
-AGA ATG ATG CAT GAT TGGA TGT
-"""

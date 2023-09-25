@@ -1,3 +1,25 @@
+"""
+Code Challenge: Solve the De Bruijn Graph from a String Problem.
+
+    Input: An integer k and a string Text.
+    Output: DeBruijnk(Text), in the form of an adjacency list.
+
+Sample Input:
+4
+AAGATTCTCTAAGA
+
+Sample Output:
+AAG: AGA AGA
+AGA: GAT
+ATT: TTC
+CTA: TAA
+CTC: TCT
+GAT: ATT
+TAA: AAG
+TCT: CTA CTC
+TTC: TCT
+"""
+
 def debruijn_graph(k, text):
     adjacency_list = {}
     for i in range(len(text) - k + 1):

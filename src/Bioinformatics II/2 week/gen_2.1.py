@@ -1,3 +1,29 @@
+"""
+Code Challenge: Solve the Eulerian Cycle Problem.
+
+         Input: The adjacency list of an Eulerian directed graph.
+         Output: An Eulerian cycle in this graph.
+
+ Sample Input:
+0: 3
+1: 0
+2: 1 6
+3: 2
+4: 2
+5: 4
+6: 5 8
+7: 9
+8: 7
+9: 6
+
+Sample Output:
+6 8 7 9 6 5 4 2 1 0 3 2 6
+"""
+
+
+
+
+
 def load_adjacency_list(file_path):
     adjacency_list = {}
     with open(file_path, 'r') as file:
@@ -25,7 +51,6 @@ def find_eulerian_cycle(adj_list):
     if len(path) == total_edges + 1:
         return path
     return None
-
 
 file_path = 'dataset_203_2.txt'  # Укажите путь к вашему файлу с данными
 adjacency_list = load_adjacency_list(file_path)

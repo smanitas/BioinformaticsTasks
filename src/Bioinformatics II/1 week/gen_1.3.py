@@ -1,3 +1,19 @@
+"""
+Code Challenge: Solve the Overlap Graph Problem (restated below).
+
+    Input: A collection Patterns of k-mers.
+    Output: The overlap graph Overlap(Patterns), in the form of an adjacency list. (You may return the nodes and their edges in any order.)
+
+Sample Input:
+ATGCG GCATG CATGC AGGCA GGCAT GGCAC
+
+Sample Output:
+CATGC: ATGCG
+GCATG: CATGC
+GGCAT: GCATG
+AGGCA: GGCAC GGCAT
+"""
+
 from collections import defaultdict
 
 def overlap(patterns):

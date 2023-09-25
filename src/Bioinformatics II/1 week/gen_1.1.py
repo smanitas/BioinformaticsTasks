@@ -1,3 +1,18 @@
+"""
+Code Challenge: Solve the String Composition Problem.
+
+    Input: An integer k and a string Text.
+    Output: Compositionk(Text) (the k-mers can be provided in any order).
+
+Sample Input:
+5
+CAATCCAAC
+
+Sample Output:
+CAATC AATCC ATCCA TCCAA CCAAC
+"""
+
+
 def string_composition(k, text):
     composition = []
     for i in range(len(text) - k + 1):

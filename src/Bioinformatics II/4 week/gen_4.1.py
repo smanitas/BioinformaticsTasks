@@ -1,3 +1,19 @@
+"""
+Cyclopeptide Scoring Problem: Compute the score of a cyclic peptide against a spectrum.
+
+    Input: An amino acid string Peptide and a collection of integers Spectrum.
+    Output: The score of Peptide against Spectrum, Score(Peptide, Spectrum).
+
+Code Challenge: Solve the Cyclopeptide Scoring Problem.
+
+Sample Input:
+NQEL
+0 99 113 114 128 227 257 299 355 356 370 371 484
+
+Sample Output:
+11
+"""
+
 def CyclopeptideScoring(peptide, spectrum):
     theoretical_spectrum = GenerateCyclicSpectrum(peptide)
     score = 0
